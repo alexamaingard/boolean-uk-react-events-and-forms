@@ -70,7 +70,7 @@ The `handleSubmit` should output something like this:
 
 ### The `Product` form should have:
 
-- An `ColorSquare` that changes with the color selection
+- A `ColorSquare` that changes with the color selection
 - Inputs should either have a `value` or `checked` attribute
 
 This form you will write code to handle the inputs.
@@ -89,7 +89,6 @@ The `handleSubmit` should output something like this:
 
 ### The `Booking` form should have:
 
-- An `ColorSquare` that changes with the color selection
 - Inputs should either have a `value` or `checked` attribute
 
 This form you will write code to handle the inputs.
@@ -106,32 +105,6 @@ The `handleSubmit` should output something like this:
     },
     spaActivities: [ "facial", "massage" ],
   }
-}
-```
-
-The `Adivce` slip section should render:
-
-- A single random advice slip
-- A list of favourtie advice slips
-
-The `Advice` slip section should allow users to:
-
-- Fetch another advice slip using a button
-- Save and advice slip to favourites using a button
-
-Use a `console.log` in your `handleSubmit` function to view submissions.
-
-```
-function handleSubmit(event) {
-  event.preventDefault()
-
-  const userData = {
-    firstName,
-    email,
-    password,
-  }
-
-  console.log({ userData })
 }
 ```
 

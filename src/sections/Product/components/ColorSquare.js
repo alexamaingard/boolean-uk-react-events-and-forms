@@ -1,5 +1,5 @@
-function ColorSquare(props) {
-  const { color } = props
+const ColorSquare = props => {
+  const color = props.color;
 
   const colors = {
     white: "bg-white",
@@ -9,12 +9,11 @@ function ColorSquare(props) {
     green: "bg-green",
   }
 
-  let className = "color-square"
+  let className = "color-square";
 
-  if (color) {
-    const bgColor = colors[color]
-
-    className += ` ${bgColor}`
+  if(color){
+    const bgColor = colors[color];
+    className += ` ${bgColor}`;
   }
 
   return <div className={className}></div>
