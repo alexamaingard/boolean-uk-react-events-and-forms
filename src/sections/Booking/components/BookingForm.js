@@ -13,10 +13,10 @@ const BookingForm = () => {
   const [bookingData, setBookingData] = useState(initialBookingData);
   
   const handleBookingChange = event => {
-    event.preventDefault();
     let {name, value, type, checked} = event.target;
     console.log(event.target);
     type === 'checkbox' && (value = checked);
+    
     if(name === 'newspaper' || name === 'breakfast'){
       setBookingData({...bookingData, roomServices: {...bookingData.roomServices, [name]: value}});
     }

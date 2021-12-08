@@ -11,7 +11,6 @@ const ProductForm = () => {
   const [productData, setProductData] = useState(initialProductData);
   
   const handleProductChange = event => {
-    event.preventDefault();
     let {name, value} = event.target;
     setProductData({...productData, [name]: value});
   }
@@ -30,8 +29,7 @@ const ProductForm = () => {
         type="radio" 
         id="size-sm" 
         name="size" 
-        value="small"
-        checked={productData.size === 'small'}
+        value={productData.size}
         onChange={handleProductChange} 
       />
       <label htmlFor="size-sm">S</label>
@@ -39,8 +37,7 @@ const ProductForm = () => {
         type="radio" 
         id="size-md" 
         name="size" 
-        value="medium" 
-        checked={productData.size === 'medium'}
+        value="medium"
         onChange={handleProductChange} 
       />
       <label htmlFor="size-md">M</label>
@@ -48,8 +45,7 @@ const ProductForm = () => {
         type="radio" 
         id="size-lg" 
         name="size" 
-        value="large" 
-        checked={productData.size === 'large'}
+        value={productData.size}
         onChange={handleProductChange} 
       />
       <label htmlFor="size-lg">L</label>
