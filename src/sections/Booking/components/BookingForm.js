@@ -15,22 +15,25 @@ const BookingForm = () => {
   const handleBookingChange = event => {
     let {name, value, type, checked} = event.target;
     console.log(event.target);
-    type === 'checkbox' && (value = checked);
     
-    if(name === 'newspaper' || name === 'breakfast'){
-      setBookingData({...bookingData, roomServices: {...bookingData.roomServices, [name]: value}});
-    }
-    else if(name === 'pool' || name === 'facial' || name === 'massage'){
-      if(bookingData.spaActivities.includes(name)){
-        console.log('remove: ', name);
-        const indexToRemove = bookingData.spaActivities.indexOf(name);
-        bookingData.spaActivities.splice(indexToRemove, 1);
-        setBookingData(bookingData);
+    if(type === 'checkbox'){
+      value = checked;
+      if(name === 'newspaper' || name === 'breakfast'){
+        setBookingData({...bookingData, roomServices: {...bookingData.roomServices, [name]: value}});
       }
-      else{
-        setBookingData({...bookingData, spaActivities: [...bookingData.spaActivities, name]});
+      else {
+        if(bookingData.spaActivities.includes(name)){
+          console.log('remove: ', name);
+          const indexToRemove = bookingData.spaActivities.indexOf(name);
+          bookingData.spaActivities.splice(indexToRemove, 1);
+          setBookingData(bookingData);
+        }
+        else{
+          setBookingData({...bookingData, spaActivities: [...bookingData.spaActivities, name]});
+        }
       }
     }
+
     else {
       setBookingData({...bookingData, [name]: value});
     }
